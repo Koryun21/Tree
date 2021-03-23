@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;;
+}
+
+body{
+  background-color: #c2d6e7;
+}
+
+#wrapper{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+
+  .page-column{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    // border: 1px solid red;
+  
+    .page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    
+      .page-body{
+        width: 152px;
+        padding: 16px;
+        border-radius: 12px;
+        border: 2px solid black;
+        position: relative;
+        background-color: white;
+        z-index: 25;
+        
+        .page-action{
+          position: absolute;
+          cursor: pointer;
+          display: none;
+          width: 24px;
+          height: 24px;
+          border-radius: 25px;
+          background-position: center center;
+        }
+        
+        .showBtn{
+          left: calc(50% - 12px);
+          bottom: -12px;
+          z-index: 10;
+        }
+        
+        .addBtn{
+          left: calc(50% - 12px);
+          top: -42px;
+          z-index: 10;
+          cursor: pointer;
+        }
+        
+        
+        .deleteBtn{
+          position: absolute;
+          cursor: pointer;
+          z-index: 15;
+          right: -12px;
+          top:-12px;
+          width: 24px;
+          height: 24px;
+          border-radius: 25px;
+          background-position: center center;
+        }
+        
+        
+        // BUTTONS BACGROUNDS
+        
+        .addBackground{
+          background-image: url("../../icons/page/add.svg");
+        }
+        .addBackground:hover{
+          background-image: url("../../icons/page/addHover.svg");
+        }
+        .showBackground{
+          background-image: url("../../icons/page/show.svg");
+        }
+        .showBackground:hover{
+          background-image: url("../../icons/page/showHover.svg");
+        }
+        .hideBackground{
+          background-image: url("../../icons/page/hide.svg");
+        }
+        .hideBackground:hover{
+          background-image: url("../../icons/page/hideHover.svg");
+        }
+        .deleteBackground{
+          background-image: url("../../icons/page/delete.svg");
+        }
+        .deleteBackground:hover{
+          background-image: url("../../icons/page/deleteHover.svg");
+        }
+        
+        .page-name-input{
+          font-weight: 700;
+          font-style: normal;
+          font-size: 16px;
+          line-height: 21.82px;
+          margin-bottom: 6px;
+          width: 128px;
+          height: 22px;
+          border-radius: 4px;
+          border: none;
+          margin-left: -5px;
+          background: transparent;
+          color: black;
+        } 
+        .page-name-input:focus{
+          background: rgb(76,76,76);
+          color: white;
+        }
+        .page-block{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+    
+          .block{
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-bottom: 6px;
+          
+            .block-name{
+              display: block;
+              background-color: black;
+              border: none;
+              color: white;
+              width: 120px;
+              border-radius: 89px;
+              font-weight: 700;
+              font-style: normal;
+              font-size: 14px;
+              line-height: 16px;
+              padding: 7px 10px; 
+            }
+          
+            .block-name:focus{
+              background: rgb(76,76,76) !important;
+              color: white;
+            }
+          
+            .active{
+              background-color: white !important;
+              color: black;
+            }
+          
+            .block-action{
+              position: absolute;
+              right: 2px;
+              cursor: pointer;
+              width: 24px;
+              height: 24px;
+              border-radius: 25px;
+              background-position: center center;
+              background-image: url("../../icons/block/delete.svg");
+              background-repeat: no-repeat;
+            }
+            .block-action:hover{
+              background-image: url("../../icons/block/deleteHover.svg") !important;
+            }
+          }
+          
+          .add-block{
+            width: 120px;
+            height: 24px;
+            border-radius: 89px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid white;
+            font-weight: 800;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+          }
+          .add-block:hover{
+            background-color: white;
+            color: black;
+          }
+        }
+        .shadow{
+          width: calc(100% + 4px);
+          position: absolute;
+          left: -2px;
+          bottom: -14px;
+          height: 21px;
+          border-radius: 0 0 12px 12px;
+          border: 2px solid black;
+          border-top: none;
+          >div{
+            width: calc(100% + 4px);
+          }
+          :nth-child(1){
+            height: 80%;
+            border: 2px solid black;
+            border-radius: 0 0 12px 12px;
+            margin-left: -2px;
+            border-top: none;
+          }
+        }
+      }
+    
+    
+      .active{
+        background-color: rgba(0, 0, 0, 1);
+        .page-name-input{
+          color: white !important;
+        }
+      }
+    
+      .show{
+        box-shadow: 0 12px white;
+      }
+    }  :hover > .page-body >.page-action{
+      display: block;
+    }
+  
+    
+    .page-subpage{
+      width: 100%;
+      // border: 1px solid green;
+      display: flex;
+    }
+  }
+  
+}
